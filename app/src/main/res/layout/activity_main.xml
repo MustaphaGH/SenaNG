@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:elevation="0dp"
+    tools:context="com.sena.core.activities.AppActivity">
+
+    <FrameLayout
+        android:id="@+id/mainContentLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:elevation="8dp"
+        android:orientation="horizontal">
+
+    </FrameLayout>
+
+    <android.support.design.widget.NavigationView
+        android:id="@+id/navigationViewMenu"
+        style="@style/Widget.Design.NavigationView"
+        android:layout_width="250dp"
+        android:layout_gravity="end"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="0dp"
+        android:background="@color/clouds"
+        android:fadingEdge="none"
+
+        android:fitsSystemWindows="true"
+        app:elevation="12dp"
+        app:insetForeground="@android:color/transparent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:clickable="true"
+            android:orientation="vertical"
+            android:paddingBottom="16dp">
+
+            <TextView
+                android:id="@+id/menu_start_button"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_marginBottom="15dp"
+                android:layout_marginLeft="40dp"
+                android:drawablePadding="10dp"
+                android:drawableStart="@drawable/menu_icon_startv2"
+                android:gravity="left|center"
+                android:text="Start"
+                android:textColor="@android:color/holo_blue_dark"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/menu_realm_button"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_marginBottom="15dp"
+                android:layout_marginLeft="40dp"
+                android:drawablePadding="10dp"
+                android:drawableStart="@drawable/menu_icon_realm"
+                android:gravity="left|center"
+                android:text="Realm of Dreams"
+                android:textColor="#1abc9c"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/menu_profile_button"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_marginBottom="15dp"
+                android:layout_marginLeft="40dp"
+                android:drawablePadding="10dp"
+                android:drawableStart="@drawable/ic_person_black_24dp"
+                android:gravity="left|center"
+                android:text="Profile"
+                android:textColor="@color/darkBlue"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/menu_settings_button"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_marginBottom="50dp"
+                android:layout_marginLeft="40dp"
+                android:drawableLeft="@drawable/ic_settings_black_24dp"
+                android:drawablePadding="10dp"
+                android:gravity="left|center"
+                android:text="Settings"
+                android:textColor="@color/darkBlue"
+                android:textSize="18sp" />
+
+            <ImageView
+                android:id="@+id/closeDrawerButton"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_gravity="right"
+                android:layout_marginRight="16dp"
+                app:srcCompat="@drawable/ic_close_black_24dp" />
+        </LinearLayout>
+
+    </android.support.design.widget.NavigationView>
+
+</android.support.v4.widget.DrawerLayout>
