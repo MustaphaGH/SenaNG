@@ -37,8 +37,7 @@ public class AppActivity extends AppCompatActivity {
 
     private StartFragment startFragment = new StartFragment();
 
-    private static final long MOVE_DEFAULT_TIME = 1000;
-    private static final long FADE_DEFAULT_TIME = 300;
+
 
     private FrameLayout mainLayout;
     private ActionBarDrawerToggle mDrawerToggle;
@@ -75,13 +74,7 @@ public class AppActivity extends AppCompatActivity {
         profileMenuButton.setTypeface(TypeFaceUtils.create(this).getRegularFace());
 
 
-
         initDrawer();
-
-
-
-
-
 
 
         loadInitialFragment();
@@ -120,18 +113,6 @@ public class AppActivity extends AppCompatActivity {
 
     private void performTransition()
     {
-        Slide slideTransition = new Slide(Gravity.TOP);
-        slideTransition.setDuration(1000);
-
-        Slide slideTransitionEnter = new Slide(Gravity.TOP);
-        slideTransitionEnter.setDuration(1000);
-
-
-        Transition changeBoundsTransition = TransitionInflater.from(this).inflateTransition(R.transition.changebounds_with_arcmotion);
-        startFragment.setSharedElementEnterTransition(changeBoundsTransition);
-
-        //startFragment.setEnterTransition(slideTransitionEnter);
-        //startFragment.setExitTransition(slideTransition);
     }
 
     @OnClick(R.id.closeDrawerButton)

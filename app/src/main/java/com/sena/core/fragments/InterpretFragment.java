@@ -1,6 +1,7 @@
 package com.sena.core.fragments;
 
 
+import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -32,7 +33,7 @@ import butterknife.Unbinder;
  * Created by MrClawSs on 10/9/2017.
  */
 
-public class InterpretFragment extends BaseFragment {
+public class InterpretFragment extends Fragment {
 
     @BindView(R.id.tags_message) TextView tagsMessage;
     @BindView(R.id.inter_message) TextView interMessage;
@@ -42,10 +43,10 @@ public class InterpretFragment extends BaseFragment {
     @BindView(R.id.sena_logo_inter) ImageView logo;
 
     @BindColor(R.color.clouds)
-    Color cloudsColor;
+    public ColorStateList cloudsColor;
 
     @BindDrawable(R.drawable.button_round_solid)
-    Drawable buttonBackgoud;
+    public Drawable buttonBackgoud;
 
 
 
@@ -53,7 +54,6 @@ public class InterpretFragment extends BaseFragment {
 
     private List<Integer> list = new ArrayList<>();
 
-    private Runnable runnable = this::callIt;
 
 
     public static InterpretFragment newInstance()
@@ -94,16 +94,5 @@ public class InterpretFragment extends BaseFragment {
     }
 
 
-    public void callIt (){
-
-
-        tester(new TestInterface() {
-            @Override
-            public int go() {
-                return 0;
-            }
-        });
-
-    }
 
 }

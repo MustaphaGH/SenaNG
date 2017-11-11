@@ -97,23 +97,9 @@ public class StartFragment extends Fragment {
         this.setExitTransition(exitFade);
 
 
-        //SHARED Fazet
-        TransitionSet enterTransitionSet = new TransitionSet();
-        enterTransitionSet.addTransition(TransitionInflater.from(getActivity()).inflateTransition(android.R.transition.move));
-        enterTransitionSet.setDuration(MOVE_DEFAULT_TIME);
-        enterTransitionSet.setStartDelay(FADE_DEFAULT_TIME);
-        interpretFragment.setSharedElementEnterTransition(enterTransitionSet);
-
-        //ENTER
-        Fade enterFade = new Fade();
-        enterFade.setStartDelay(MOVE_DEFAULT_TIME + FADE_DEFAULT_TIME);
-        enterFade.setDuration(FADE_DEFAULT_TIME);
-        interpretFragment.setEnterTransition(enterFade);
-
-        //interpretFragment.setAllowEnterTransitionOverlap(false);
-        //interpretFragment.setAllowReturnTransitionOverlap(true);
-
-        firstTransaction.replace(R.id.mainContentLayout,interpretFragment).
-                addSharedElement(logo,"logo").addSharedElement(startMessage,"senaMessage").addToBackStack("inter").commitAllowingStateLoss();
+        firstTransaction.replace(R.id.mainContentLayout,interpretFragment)
+                .setTransition(R.transition.slide_and_changebounds)
+                .addToBackStack("inter")
+                .commitAllowingStateLoss();
     }
 }
