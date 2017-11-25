@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:elevation="0dp"
-    tools:context="com.sena.core.activities.AppActivity">
+    tools:context="com.sena.ui.activities.AppActivity">
 
     <FrameLayout
         android:id="@+id/mainContentLayout"

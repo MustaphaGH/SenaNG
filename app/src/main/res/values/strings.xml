@@ -1,9 +1,33 @@
 <resources>
+
     <string name="app_name">Sena</string>
     <string name="title_activity_main2">Main2Activity</string>
-
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-
     <string name="action_settings">Settings</string>
+
+    <!-- Hints -->
+    <string name="hint_dotted">...</string>
+    <!--******-->
+
+
+    <!-- Action Strings -->
+    <string name="action_home_interpret_dream">Interpret a dream</string>
+    <string name="action_home_navigate_realmOfDreams">Take a look</string>
+    <string name="action_interpretation_interpret">Interpret it</string>
+    <string name="action_interpretation_switch_tags">Switch to Tags</string>
+    <!--******-->
+
+    <!-- App messages -->
+    <string name="sena_message_interpretation">As you saw it, Please describe your dream.</string>
+    <string name="sena_message_home">Hi, I\'m Sena. I can help you interpret your dreams.</string>
+    <string name="switch_message_toTags">I prefer to enter only some tags</string>
+    <!--******-->
+
+    <!-- App Titles -->
+    <string name="interpret_dream_fullDescription">Interpret a dream</string>
+    <string name="interpret_dream_tags">Interpret with tags</string>
+
+    <string name="realm_posts">Realm of dreams</string>
+    <!--******-->
 </resources>

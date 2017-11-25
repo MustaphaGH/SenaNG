@@ -1,112 +1,153 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/white">
+    >
 
-    <LinearLayout
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:paddingBottom="30dp">
+        android:layout_height="50dp"
+        android:background="@color/clouds"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" >
 
-        <android.support.constraint.ConstraintLayout
+        <TextView
+            android:id="@+id/toolbarTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/interpret_dream_fullDescription"
+            android:textAlignment="center"
+            android:textColor="@color/darkBlue"
+            android:textSize="16sp"
+            tools:layout_editor_absoluteX="163dp"
+            tools:layout_editor_absoluteY="16dp" />
+
+    </android.support.v7.widget.Toolbar>
+
+
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@android:color/white">
+            android:paddingBottom="30dp">
 
-            <TextView
-                android:id="@+id/tags_message"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="-1dp"
-                android:layout_marginTop="24dp"
-                android:text="I perfer to enter only some tags"
-                android:textColor="@color/darkBlue"
-                android:textSize="18sp"
-                app:layout_constraintRight_toRightOf="@+id/inter_button"
-                app:layout_constraintTop_toBottomOf="@+id/inter_button" />
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/white">
 
-            <TextView
-                android:id="@+id/inter_message"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp"
-                android:layout_marginTop="0dp"
-                android:text="Okay, as you saw it.\nPlease describe your dream"
-                android:textColor="@color/darkBlue"
-                android:textSize="22sp"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/sena_logo_inter"
-                android:transitionName="senaMessage"
-                android:clickable="true"
-                android:onClick="test"/>
+                <TextView
+                    android:id="@+id/tags_message"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="-1dp"
+                    android:layout_marginTop="24dp"
+                    android:text="@string/switch_message_toTags"
+                    android:textColor="@color/darkBlue"
+                    android:textSize="18sp"
+                    app:layout_constraintRight_toRightOf="@+id/inter_button"
+                    app:layout_constraintTop_toBottomOf="@+id/inter_button" />
 
-            <ImageView
-                android:id="@+id/sena_logo_inter"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginTop="16dp"
-                android:transitionName="logo"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/logo" />
+                <TextView
+                    android:id="@+id/inter_message"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginRight="32dp"
+                    android:clickable="true"
+                    android:onClick="test"
+                    android:text="@string/sena_message_interpretation"
+                    android:textColor="@color/darkBlue"
+                    android:textSize="22sp"
+                    android:transitionName="senaMessage"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/sena_logo_inter" />
 
-            <Button
-                android:id="@+id/tags_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="0dp"
-                android:layout_marginTop="12dp"
-                android:background="@drawable/button_round_solid"
-                android:paddingEnd="15dp"
-                android:paddingStart="15dp"
-                android:text="Switch to Tags"
-                android:textAllCaps="false"
-                android:textColor="@android:color/white"
-                app:layout_constraintRight_toRightOf="@+id/inter_button"
-                app:layout_constraintTop_toBottomOf="@+id/tags_message" />
+                <ImageView
+                    android:id="@+id/sena_logo_inter"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="16dp"
+                    android:transitionName="logo"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/logo" />
 
-            <Button
-                android:id="@+id/inter_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="24dp"
-                android:layout_marginTop="24dp"
-                android:background="@drawable/button_round_stroke"
-                android:paddingEnd="15dp"
-                android:paddingStart="15dp"
-                android:text="Interpret it"
-                android:textAllCaps="false"
-                android:textColor="@color/mainBlue"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/user_dream" />
+                <Button
+                    android:id="@+id/tags_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/button_round_solid"
+                    android:paddingEnd="15dp"
+                    android:paddingStart="15dp"
+                    android:text="@string/action_interpretation_switch_tags"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/white"
+                    app:layout_constraintRight_toRightOf="@+id/inter_button"
+                    app:layout_constraintTop_toBottomOf="@+id/tags_message" />
 
-            <EditText
-                android:id="@+id/user_dream"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="45dp"
-                android:layout_marginRight="45dp"
-                android:layout_marginTop="24dp"
-                android:background="@drawable/input_round"
-                android:ems="10"
-                android:hint="...."
-                android:inputType="textMultiLine"
-                android:paddingBottom="15dp"
-                android:paddingEnd="15dp"
-                android:paddingStart="15dp"
-                android:paddingTop="10dp"
-                android:textColor="@color/darkBlue"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/inter_message" />
-        </android.support.constraint.ConstraintLayout>
-    </LinearLayout>
-</ScrollView>
+                <Button
+                    android:id="@+id/inter_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="24dp"
+                    android:layout_marginTop="24dp"
+                    android:background="@drawable/button_round_stroke"
+                    android:paddingEnd="15dp"
+                    android:paddingStart="15dp"
+                    android:text="@string/action_interpretation_interpret"
+                    android:textAllCaps="false"
+                    android:textColor="@color/mainBlue"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/user_dream" />
+
+                <EditText
+                    android:id="@+id/user_dream"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="45dp"
+                    android:layout_marginRight="45dp"
+                    android:layout_marginTop="24dp"
+                    android:background="@drawable/input_round"
+                    android:ems="10"
+                    android:hint="...."
+                    android:inputType="textMultiLine"
+                    android:paddingBottom="15dp"
+                    android:paddingEnd="15dp"
+                    android:paddingStart="15dp"
+                    android:paddingTop="10dp"
+                    android:textColor="@color/darkBlue"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/inter_message" />
+            </android.support.constraint.ConstraintLayout>
+        </LinearLayout>
+    </ScrollView>
+
+
+</android.support.constraint.ConstraintLayout>
+
 

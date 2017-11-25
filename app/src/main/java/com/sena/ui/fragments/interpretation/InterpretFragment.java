@@ -1,13 +1,10 @@
-package com.sena.core.fragments;
+package com.sena.ui.fragments.interpretation;
 
 
 import android.content.res.ColorStateList;
-import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.transition.Slide;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,6 +14,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.sena.R;
+import com.sena.ui.fragments.BaseFragment;
 import com.sena.utils.TypeFaceUtils;
 
 import java.util.ArrayList;
@@ -33,7 +31,7 @@ import butterknife.Unbinder;
  * Created by MrClawSs on 10/9/2017.
  */
 
-public class InterpretFragment extends Fragment {
+public class InterpretFragment extends BaseFragment {
 
     @BindView(R.id.tags_message) TextView tagsMessage;
     @BindView(R.id.inter_message) TextView interMessage;
@@ -41,14 +39,12 @@ public class InterpretFragment extends Fragment {
     @BindView(R.id.inter_button) Button interButton;
     @BindView(R.id.tags_button) Button tagButton;
     @BindView(R.id.sena_logo_inter) ImageView logo;
+    @BindView(R.id.toolbarTitle) TextView toolbarTitle;
 
     @BindColor(R.color.clouds)
     public ColorStateList cloudsColor;
-
     @BindDrawable(R.drawable.button_round_solid)
     public Drawable buttonBackgoud;
-
-
 
     private Unbinder unbinder;
 
@@ -56,7 +52,7 @@ public class InterpretFragment extends Fragment {
 
 
 
-    public static InterpretFragment newInstance()
+    public static InterpretFragment getInstance()
     {
         return new InterpretFragment();
     }
@@ -69,22 +65,22 @@ public class InterpretFragment extends Fragment {
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.fragment_interpret, container, false);
-        ButterKnife.bind(this,view);
-        unbinder = ButterKnife.bind(this, view);
-
+        root = inflater.inflate(R.layout.fragment_interpret, container, false);
+        ButterKnife.bind(this,root);
+        unbinder = ButterKnife.bind(this, root);
 
 
         interMessage.setTypeface(TypeFaceUtils.create(getActivity()).getRegularFace());
         tagsMessage.setTypeface(TypeFaceUtils.create(getActivity()).getLightFace());
         interButton.setTypeface(TypeFaceUtils.create(getActivity()).getLightFace());
         tagButton.setTypeface(TypeFaceUtils.create(getActivity()).getLightFace());
-
+        toolbarTitle.setTypeface(TypeFaceUtils.create(getActivity()).getRegularFace());
         userDream.setTypeface(TypeFaceUtils.create(getActivity()).getLightFace());
 
 
+        initToolbar();
 
-        return view;
+        return root;
     }
 
 
@@ -94,5 +90,8 @@ public class InterpretFragment extends Fragment {
     }
 
 
-
+    @Override
+    public void onToolbarBack() {
+        getParent().onBackPressed();
+    }
 }

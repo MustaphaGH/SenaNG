@@ -1,4 +1,4 @@
-package com.sena.core.Utils;
+package com.sena.utils;
 
 import android.Manifest;
 import android.annotation.TargetApi;
