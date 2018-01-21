@@ -27,8 +27,6 @@ import butterknife.OnClick;
 
 public class StartFragment extends Fragment {
 
-    public static AppActivity _context;
-
     private static final long MOVE_DEFAULT_TIME = 1000;
     private static final long FADE_DEFAULT_TIME = 300;
 

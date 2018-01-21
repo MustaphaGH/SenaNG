@@ -21,6 +21,7 @@ import com.sena.utils.TypeFaceUtils;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import butterknife.Unbinder;
 
 public class AppActivity extends AppCompatActivity {
 
@@ -33,6 +34,7 @@ public class AppActivity extends AppCompatActivity {
 
     private Handler mDelayedTransactionHandler = new Handler();
     private Runnable mRunnable = this::performTransition;
+    private Unbinder unbinder;
 
     @BindView(R.id.menu_realm_button)  TextView realmMenuButton;
     @BindView(R.id.menu_start_button)  TextView startMenuButton;
@@ -47,6 +49,7 @@ public class AppActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         mFragmentManager = getSupportFragmentManager();
+        unbinder = ButterKnife.bind(this, this);
 
         drawer = (DrawerLayout)findViewById(R.id.drawer);
         navigationViewMenu = (NavigationView)findViewById(R.id.navigationViewMenu);
@@ -127,7 +130,6 @@ public class AppActivity extends AppCompatActivity {
         FragmentTransaction firstTransaction = mFragmentManager.beginTransaction();
         performTransition();
 
-        StartFragment._context = this;
         firstTransaction.replace(R.id.mainContentLayout,StartFragment.getInstance()).commit();
 
     }
@@ -154,6 +156,7 @@ public class AppActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        unbinder.unbind();
         mDelayedTransactionHandler.removeCallbacks(mRunnable);
     }
 

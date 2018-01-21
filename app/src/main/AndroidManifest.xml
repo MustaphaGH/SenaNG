@@ -13,7 +13,7 @@
         tools:replace="android:icon"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".ui.activities.AppActivity">
+        <activity android:name=".ui.activities.AppActivity" android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
